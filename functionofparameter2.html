@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <div class="alert-box"  id="alert">
+        <p id = "title">알림창임</p>
+        <button onclick="알림창여닫기('none')">닫기</button>
+    </div>
+
+    <button  onclick="아이디비밀번호('아이디')">버튼1</button>
+    <button  onclick="아이디비밀번호('비밀번호')">버튼2</button>
+    
+</body>
+<script>
+    // p 태그 내용을 바꿈 -> HTML의 내용을 바꾸고 싶다면 innerHTML
+    // 띄움
+    function 아이디입력() { 
+        document.getElementById('title').innerHTML = '아이디입력';
+        document.getElementById('title').style.display = 'block';
+    }
+
+    function 비밀번호입력() { 
+        document.getElementById('title').innerHTML = '비밀번호입력';
+        document.getElementById('title').style.display = 'block';
+    }
+
+    function 아이디비밀번호(구멍) {
+        document.getElementById('title').innerHTML = 구멍;
+        document.getElementById('title').style.display = 'block';
+    }
+
+
+    function 알림창여닫기(구멍) {
+        document.getElementById('alert').style.display = 구멍;
+    }
+
+
+</script>
+</html>
