@@ -4,7 +4,10 @@
     <!-- 부트스트랩 css / cdn-->
     <meta charset="UTF-8"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>querySelector</title>
+    <!-- JQuery / cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <style>
     /*.list-group {
         display: none;
@@ -36,17 +39,29 @@
 </body>
 
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.list-group')[0].classList.toggle('hide');
+    });
 
+    // 1차원적 방법
+    // document.getElementsByClassName('navbbar-toggler')[0].addEventListener('click', function(){
+    //     //document.getElementsByClassName('list-group')
+    //     //[0].classList.add('show')
+    //     //document.getElementsByClassName('list-group')
+    //     //[0].classList.toggle('show')
+
+    //     document.querySelectorAll('.list-group-item')[3].classList.add('show')
+    // })
+
+    // 2차원적 방법
+    document.querySelector('.navbar-toggler').addEventListener('click', function () {
+        document.querySelectorAll('.list-group')[0].classList.toggle('hide');
+    });
+
+    //JQuery
     
-    document.getElementsByClassName('navbbar-toggler')
-    [0].addEventListener('cliick', function(){
-        //document.getElementsByClassName('list-group')
-        //[0].classList.add('show')
-        //document.getElementsByClassName('list-group')
-        //[0].classList.toggle('show')
 
-        document.querySelectorAll('.list-group-item')[3].classList.add('show')
-    })
+
 
 </script>
 </html>

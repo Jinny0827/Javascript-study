@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Example</title>
+      <!-- 부트스트랩 css / cdn-->
+      <meta charset="UTF-8"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <title>querySelector</title>
+      <!-- JQuery / cdn-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    .modal {
+        position:absolute;
+        width:100%;
+        height:100%;
+        background-color: rgba(101, 30, 196, 0.8);
+        top:0;
+        left:0;
+        display:none;
+    }
+
+</style>
+<body>
+    <h3>안녕을 바보로 만들기</h3>
+    <br><br>
+    <p class = "hello">안녕?</p>
+
+    <p class = "bye">안녕?</p>
+
+    <button type = "button" id = "test-btn">버튼</button>
+    
+    <button type = "button" id = "modal-btn">로그인</button>
+
+    <div class = "modal">
+        <div class = "modal-content">
+            <h3>나는 모달이다 그러므로 모달이다</h3>
+        </div>
+    </div>
+</body> 
+<script>
+
+    //바닐라 JS
+    //바닐라 문법 뒤에는 바닐라용 함수만 붙일 수 있음 document.바닐라용 함수
+
+    // 텍스트 변화
+    document.querySelector('.hello').innerHTML = "바보";
+    $(".hello").css("color", "red");
+
+    // 버튼에 따른 이벤트 리스너 구현
+    document.querySelector('#test-btn').addEventListener('click', function() {
+        console.log("버튼을 눌럿다.");
+    }) 
+    
+
+
+    // JQuery
+    // JQuery 문법 뒤에는 JQuery용 함수만 붙일 수 있음 $("요소").JQuery함수
+
+    // 텍스트 변화
+    $(".bye").text("바보");
+
+    // 버튼에 따른 이벤트 리스너 구현
+    $('#test-btn').on('click', function() {
+        alert("버튼을 눌럿다.")
+    })
+
+    //UI 애니메이션 주기
+    // $('.hello').hide();
+    // $('.hello').fadeOut();
+    // $('.hello').slideUp();
+    
+
+    // 모달창 띄우는 JQuery를 이용한 숙제
+    $("#modal-btn").on("click", function(){
+        $(".modal").show();
+    })
+    
+    $(".modal-content").on("click", function(){
+        $(".modal").hide();
+    })
+</script>
+</html>
